@@ -28,7 +28,7 @@
 # IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 # Changes from Qualcomm Innovation Center are provided under the following license:
-# Copyright (c) 2022-2023 Qualcomm Innovation Center, Inc. All rights reserved.
+# Copyright (c) 2022-2023, 2025 Qualcomm Innovation Center, Inc. All rights reserved.
 # SPDX-License-Identifier: BSD-3-Clause-Clear
 
 soc_id=`cat /sys/devices/soc0/soc_id` 2> /dev/null
@@ -50,15 +50,18 @@ elif [ "$soc_id" -eq 470 ]; then
     setprop ro.vendor.qti.soc_model QCS4290
 elif [ "$soc_id" -eq 473 ]; then
     setprop ro.vendor.qti.soc_model QCM2290
+    setprop vendor.audio.feature.dmabuf.cma.memory.enable true
+    setprop vendor.audio.feature.use_spkr_hs_combo.enable true
 elif [ "$soc_id" -eq 474 ]; then
     setprop ro.vendor.qti.soc_model QCS2290
+    setprop vendor.audio.feature.dmabuf.cma.memory.enable true
+    setprop vendor.audio.feature.use_spkr_hs_combo.enable true
 elif [ "$soc_id" -eq 497 ]; then
     setprop ro.vendor.qti.soc_model QCM6490
 elif [ "$soc_id" -eq 498 ]; then
     setprop ro.vendor.qti.soc_model QCS6490
 elif [ "$soc_id" -eq 585 ]; then
     setprop ro.vendor.qti.soc_model SG4150P
-    setprop vendor.audio.gaming.enabled true
     setprop vendor.audio.feature.dmabuf.cma.memory.enable true
 elif [ "$soc_id" -eq 586 ]; then
     setprop ro.vendor.qti.soc_model QCM4325
